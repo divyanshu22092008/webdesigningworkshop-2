@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Lab</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 420px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4f83ff;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #3a6de0;
+        }
+
+        #paragraph {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 id="heading">Welcome to JavaScript Lab</h2>
+
+    <input type="text" id="headingInput" placeholder="Enter new heading text">
+
+    <div class="buttons">
+        <button onclick="changeHeading()">Change Heading</button>
+        <button onclick="changeBackground()">Change Background</button>
+        <button onclick="increaseFont()">Increase Font Size</button>
+        <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+        <button onclick="resetAll()">Reset</button>
+    </div>
+
+    <p id="paragraph">
+        This is a sample paragraph. JavaScript events can dynamically change content.
+    </p>
+</div>
+
+<script src="dom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Salary Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .wrap {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .field {
+      flex: 1 1 calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"] {
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .actions {
+      width: 100%;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      flex: 1 1 calc(33.333% - 10px);
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #007BFF;
+      border: 2px solid #007BFF;
+    }
+    .btn-outline:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+    .status {
+      text-align: center;
+      font-weight: bold;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .employee-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Employee Salary Management System</h1>
+
+    
+    <form id="empForm" class="card" autocomplete="off">
+      <div class="field">
+        <label for="empName">Employee Name</label>
+        <input type="text" id="empName" placeholder="Employee Name" required />
+      </div>
+
+      <div class="field">
+        <label for="empId">Employee ID</label>
+        <input type="text" id="empId" placeholder="Employee ID" required />
+      </div>
+
+      <div class="field">
+        <label for="empSalary">Salary</label>
+        <input type="number" id="empSalary" placeholder="Salary" min="0" step="0.01" required />
+      </div>
+
+      <div class="field">
+        <label for="empDept">Department</label>
+        <input type="text" id="empDept" placeholder="Department" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+      </div>
+    </form>
+
+   
+    <div class="toolbar">
+      <button id="btnShowAll" class="btn">Display All</button>
+      <button id="btnSalaryGT" class="btn">Salary &gt; 50000</button>
+      <button id="btnTotal" class="btn">Total Salary</button>
+      <button id="btnAverage" class="btn">Average Salary</button>
+      <button id="btnCountDept" class="btn">Count by Department</button>
+      
+      <button id="btnClear" class="btn btn-outline" title="Clear all saved data">Clear Data</button>
+    </div>
+
+   
+    <p id="status" class="status" aria-live="polite"></p>
+
+ 
+    <section id="results" class="results">
+ 
+    </section>
+  </main>
+
+  <script src="employeesalary.js"></script>
+</body>
+</html>
