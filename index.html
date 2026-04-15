@@ -1,95 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student information </title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Counter Application</title>
+  <link rel="stylesheet" href="App.css">
 </head>
-<style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1 {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .card {
-        width: 320px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        margin: 15px 0;
-        text-align: center;
-    }
-
-    .name {
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .info {
-        font-size: 16px;
-        margin: 6px 0;
-    }
-</style>
-
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-    function StudentCard(props) {
-        return (
-            
-            <div className="card">
-                <div className="name">{props.name}</div>
-                <div className="info">Course: {props.course}</div>
-                <div className="info">Grade: {props.grade}</div>
-            </div>
-           
-        );
-    }
 
-    function App() {
-        const students = [
-            { name: "Divyanshu", course: "CSEDS", grade: "A" },
-            { name: "Gaurav", course: "CSEDS", grade: "B" },
-            { name: "Aviral", course: "CSEDS", grade: "A" }
-        ];
+  <div class="container">
+    <div class="card">
+      <h1>React Counter Application</h1>
+      <h2 id="count">0</h2>
 
-        return (
-            <div className="container">
-                <h1>Student Information</h1>
-                {students.map((student, index) => (
-                    <StudentCard
-                        key={index}
-                        name={student.name}
-                        age={student.course}
-                        grade={student.grade}
-                    />
-                ))}
-            </div>
-        );
-    }
+      <div class="buttons">
+        <button onclick="increment()">Increment (+)</button>
+        <button onclick="decrement()">Decrement (-)</button>
+      </div>
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-    </script>
-    
+      <button class="reset" onclick="resetCount()">Reset</button>
+    </div>
+  </div>
+
+  <script src="App.js"></script>
 </body>
 </html>
